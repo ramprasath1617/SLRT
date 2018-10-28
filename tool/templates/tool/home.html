@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SLRT - HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <style>
+    h3 {
+        text-align: center;
+    }
+
+    h5 {
+        text-align: center;
+    }
+
+    .content {
+    margin-top: 85px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+    }
+
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+
+    .half-line {
+    line-height: .1em;
+    }     
+
+    </style>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--<script src="main.js"></script>-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md">
+            <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">SLRT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'app' %}">TOOL</a>
+            </li>
+        </ul>
+        </div>
+            <!--modals-->
+    </nav>
+    <div class="content">
+    <div class="mx-auto text-justify container-fluid">
+        <h3>Simple Linear Regression</h3>
+        <p class="half-line">&nbsp;</p>
+        <p>
+            Simple linear regression is useful for finding relationship between two continuous variables. One is predictor or independent or explanatory variable and other is response or dependent variable. It looks for statistical relationship but not deterministic relationship. Relationship between two variables is said to be deterministic if one variable can be accurately expressed by the other. Relationship between two variables is said to be deterministic if one variable can be accurately expressed by the other. Mathematically it is represented as
+        </p>
+        <p>
+            Y = a + bX
+        </p>
+        <p>
+            Here, Y is the response variable and X is the independent variable, b is the coefficient and a is the intercept.
+        </p>
+        <p>
+            Statistical relationship is not accurate in determining relationship between two variables. The core idea is to obtain a line that best fits the data. The best fit line is the one for which total prediction error for all data points are as small as possible. Error is the distance between the point to the regression line.
+        </p>
+        <p class="half-line">&nbsp;</p>
+        <img src="{% static 'tool/images/reg.png' %}"alt="Simple Linear Regression" class="center">
+        <p class="half-line">&nbsp;</p>
+        <p>
+            From the above image we can infer that the year is the predictor variable and the number of medals scored is the response variable. Moreover the regression line reveals the trend of the medals scored which will aid us in predicting the number of medals which may be scored in the upcoming years.
+        </p>
+    </div>
+    </div>
+    <div class="jumbotron text-center" style="margin-bottom:-20">
+        <h5 class="center">ABOUT</h5>
+        <p class="half-line">&nbsp;</p>
+        <p>
+            The SLRT is a web-based application that helps in performing simple linear regression anytime, anywhere and by anybody without typing a single line of code. 
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SLRT - TOOL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <style>
+    h4 {
+        text-align: center;
+    }
+
+     h5 {
+        text-align: center;
+    }
+
+    .content {
+    margin-top: 85px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+    }
+
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+
+    .center_modal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 48.575%;
+    }
+
+    .half-line {
+    line-height: .1em;
+    }     
+
+    .wrapper {
+    text-align: center;
+    }
+
+    </style>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--<script src="main.js"></script>-->
+    <script src="/path/to/jquery.cookie.js"></script>
+    <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+    </script>
+</head>
+<body>
+
+<!--SIGN UP MODAL-->
+<div class="modal fade" id="notmyModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="col-12 modal-title text-center">Sign up</h4>
+        </div>
+
+            <!-- Modal body -->
+            <div class="modal-body text-justify">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="name">NAME</label>
+                        <input type="text" class="form-control" id="name" >
+                    </div>
+                    <div class="form-group">
+                      <label for="email">EMAIL</label>
+                      <input type="email" class="form-control" id="email" >
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">PASSWORD</label>
+                      <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" data-dismiss="modal">Sign up</button>
+                </form>
+                <a href="{% url 'home' %}"><button type="button" class="btn btn-warning btn-block">Return to Home</button></a>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SIGN IN MODAL-->
+<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+      
+            <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="col-12 modal-title text-center">Sign in</h4>
+        </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body text-justify">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                      <label for="email">EMAIL</label>
+                      <input type="email" class="form-control" id="email" >
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">PASSWORD</label>
+                      <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" data-dismiss="modal">Login</button>
+                </form>
+                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#notmyModal">Sign up</button>
+                <button type="button" class="btn btn-warning btn-block"><a href="{% url 'home' %}">Return to Home</a></button>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--UPLOAD MODAL-->
+<div class="modal fade" id="myuploadModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          
+                <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="col-12 modal-title">Upload .CSV file here</h4>
+            </div>
+          
+                <!-- Modal body -->
+            <div class="modal-body text-justify">
+                <form action="/action_page.php">
+                    <input class="center" type="file" accept=".csv" id="myFile" name="filename2" required>
+                    <p class="half-line">&nbsp;</p>
+                    <button type="submit" class="btn btn-primary btn-block" data-dismiss="modal">Upload</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-danger center_modal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+
+            <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">SLRT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+
+            <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">HOME</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">TOOL</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="mx-auto text-justify container-fluid">
+        <h4>Simple Linear Regression Tool</h4>
+        <br>
+        <div class="wrapper">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myuploadModal">
+            Choose dataset
+            </button>
+        </div>
+        <p class="half-line">&nbsp;</p>
+        <form>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="predictor_var">Predictor variable</label>
+                    <input type="text" class="form-control" placeholder="Predictor variable" required>
+                </div>
+                <div class="form-group col">
+                    <label for="response_var">Response variable</label>
+                    <input type="text" class="form-control" placeholder="Response variable" required>
+                </div>
+            </div>   
+            <div class="form-row">             
+                <div class="form-group col">
+                    <label for="Predict_range_from">Predictor range from</label>
+                    <input type="number" class="form-control" placeholder="Predictor range from" required>
+                </div>
+                <div class="form-group col">
+                    <label for="Predict_range_upto">Predictor range upto</label>
+                    <input type="number" class="form-control" placeholder="Predictor range upto" required>
+                </div>
+            </div>  
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="Response_range_from">Response range from</label>
+                    <input type="number" class="form-control" placeholder="Response range from" required>
+                </div>
+                <div class="form-group col">
+                    <label for="Response_range_upto">Response range upto</label>
+                    <input type="number" class="form-control" placeholder="Response range upto" required>
+                </div>
+            </div>
+            <p class="half-line">&nbsp;</p>
+            <div class="wrapper">
+                <button type="submit" class="btn btn-primary">Update & Plot</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

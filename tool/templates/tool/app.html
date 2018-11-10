@@ -44,19 +44,22 @@
     text-align: center;
     }
 
+    div.a{
+    text-align: center;
+    }
+
     </style>
     <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!--<script src="main.js"></script>-->
-    <script src="/path/to/jquery.cookie.js"></script>
     <script type="text/javascript">
     $(window).on('load',function(){
         $('#myModal').modal('show');
     });
     </script>
+
 </head>
 <body>
 
@@ -116,8 +119,7 @@
                     </div>
                     <button type="submit" class="btn btn-success btn-block" data-dismiss="modal">Login</button>
                 </form>
-                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#notmyModal">Sign up</button>
-                <button type="button" class="btn btn-warning btn-block"><a href="{% url 'home' %}">Return to Home</a></button>    
+                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#notmyModal">Sign up</button>   
             </div>
         </div>
     </div>
@@ -144,7 +146,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                    <button type="button" class="btn btn-danger center_modal" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger center_modal" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -185,37 +187,70 @@
         <form>
             <div class="form-row">
                 <div class="form-group col">
-                    <label for="predictor_var">Predictor variable</label>
-                    <input type="text" class="form-control" placeholder="Predictor variable" required>
+                    <div class="a">
+                        <label for="predictor_var">Predictor domain</label>
+                    </div>
+                    <input type="text" class="form-control" required>
                 </div>
                 <div class="form-group col">
-                    <label for="response_var">Response variable</label>
-                    <input type="text" class="form-control" placeholder="Response variable" required>
-                </div>
-            </div>   
-            <div class="form-row">             
-                <div class="form-group col">
-                    <label for="Predict_range_from">Predictor range from</label>
-                    <input type="number" class="form-control" placeholder="Predictor range from" required>
-                </div>
-                <div class="form-group col">
-                    <label for="Predict_range_upto">Predictor range upto</label>
-                    <input type="number" class="form-control" placeholder="Predictor range upto" required>
+                    <div class="a">
+                        <label for="predictor_var">Response domain</label>
+                    </div>
+                    <input type="text" class="form-control" required>
                 </div>
             </div>  
-            <div class="form-row">
+            <div class="a">
+                    <p>Predictor range</p>
+            </div>
+            <div class="form-row">       
                 <div class="form-group col">
-                    <label for="Response_range_from">Response range from</label>
-                    <input type="number" class="form-control" placeholder="Response range from" required>
+                    <input type="number" class="form-control" placeholder="From" required>
                 </div>
                 <div class="form-group col">
-                    <label for="Response_range_upto">Response range upto</label>
-                    <input type="number" class="form-control" placeholder="Response range upto" required>
+                    <input type="number" class="form-control" placeholder="Upto" required>
+                </div>
+            </div>  
+            <div class="a">
+                    <p>Response range</p>
+            </div>
+            <div class="form-row">         
+                <div class="form-group col">
+                    <input type="number" class="form-control" placeholder="From" required>
+                </div>
+                <div class="form-group col">
+                    <input type="number" class="form-control" placeholder="Upto" required>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <div class="a">
+                        <label for="data_pts_colour">Data pts colour</label>
+                    </div>
+                    <select class="form-control">
+                            <option value=mediumaquamarine>Mediumaquamarine</option>
+                            <option value=aqua>Aqua</option>
+                            <option value=darkgrey>Darkgrey</option>
+                            <option value=gold>Gold</option>
+                            <option valie=dodgerblue>Dodgerblue</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <div class="a">
+                        <label for="reg_line_colour">Reg line colour</label>
+                    </div>
+                    <select class="form-control">
+                            <option value=lightcoral>Lightcoral</option>
+                            <option value=dodgerblue>Dodgerblue</option>
+                            <option value=magneta>Magneta</option>
+                            <option value=deeppink>Deeppink</option>
+                            <option valie=orangered>Orangered</option>
+                    </select>
+                </div>
+            </div>  
+
             <p class="half-line">&nbsp;</p>
             <div class="wrapper">
-                <button type="submit" class="btn btn-primary">Update & Plot</button>
+                <button type="submit" class="btn btn-success">Update & Plot</button>
             </div>
         </form>
     </div>
